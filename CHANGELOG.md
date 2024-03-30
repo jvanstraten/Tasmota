@@ -1,7 +1,8 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## [Released]
+## [Unreleased]
+- Add STM32 bootloader bridge, ``STM32Start`` and ``STM32BaudRate`` (needs #define USE_STM_BRIDGE)
 
 ## [13.4.0] 20240214
 - Release Quinta

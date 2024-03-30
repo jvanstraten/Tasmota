@@ -960,6 +960,10 @@
 #define D_SENSOR_BIOPDU_BIT    "BioPDU Bit"
 #define D_SENSOR_LOX_O2_RX     "LoxO2 RX"
 #define D_GPIO_MAGIC_SWITCH "MagicSwitch"
+#define D_SENSOR_STM_TXD       "STM Tx"
+#define D_SENSOR_STM_RXD       "STM Rx"
+#define D_SENSOR_STM_BOOT0     "STM Boot0"
+#define D_SENSOR_STM_NRST      "STM nRst"
 
 // Units
 #define D_UNIT_AMPERE                    "А"

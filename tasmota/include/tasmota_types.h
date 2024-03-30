@@ -849,7 +849,10 @@ typedef struct {
   uint8_t       modbus_sconfig;            // F62
   uint8_t       windmeter_measure_intvl;   // F63
 
-  uint8_t       free_f64[12];              // F64 - Decrement if adding new Setting variables just above and below
+  uint8_t       stm_baudrate;              // F64
+  uint8_t       stm_config;                // F65
+
+  uint8_t       free_f66[10];              // F66 - Decrement if adding new Setting variables just above and below
 
   // Only 32 bit boundary variables below
   uint32_t      touch_threshold;           // F70

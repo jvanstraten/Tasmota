@@ -859,6 +859,7 @@
 #define D_LOG_LVGL "LVG: "         // LVGL graphics engine
 #define D_LOG_THERMOSTAT "THE: "   // Thermostat driver
 #define D_LOG_SENSOR "SNS: "       // Sensor driver
+#define D_LOG_STM "STM: "          // STM32 bootloader bridge
 
 /********************************************************************************************/
 

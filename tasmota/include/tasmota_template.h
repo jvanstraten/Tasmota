@@ -216,6 +216,7 @@ enum UserSelectablePins {
   GPIO_I2S_DAC,                         // Audio DAC support for ESP32 and ESP32S2
   GPIO_MAGIC_SWITCH,                    // MagicSwitch as in Sonoff BasicR4
   GPIO_PIPSOLAR_TX, GPIO_PIPSOLAR_RX,   // pipsolar inverter
+  GPIO_STM_TX, GPIO_STM_RX, GPIO_STM_BOOT0, GPIO_STM_NRST, // TCP to STM32 bootloader bridge
   GPIO_SENSOR_END };
 
 // Error as warning to rethink GPIO usage with max 2045
@@ -479,6 +480,7 @@ const char kSensorNames[] PROGMEM =
   D_SENSOR_I2S_DAC "|"
   D_GPIO_MAGIC_SWITCH "|"
   D_SENSOR_PIPSOLAR_TX "|" D_SENSOR_PIPSOLAR_RX "|"
+  D_SENSOR_STM_TXD "|" D_SENSOR_STM_RXD "|" D_SENSOR_STM_BOOT0 "|" D_SENSOR_STM_NRST "|"
   ;
 
 const char kSensorNamesFixed[] PROGMEM =
@@ -1057,6 +1059,12 @@ const uint16_t kGpioNiceList[] PROGMEM = {
 #endif
 #ifdef USE_LOX_O2                       // xsns_105_lox_o2.ino
   AGPIO(GPIO_LOX_O2_RX),                // LuminOx Oxygen Sensor LOX-O2 Serial interface
+#endif
+#ifdef USE_STM_BRIDGE
+  AGPIO(GPIO_STM_TX),                   // TCP to STM32 bootloader bridge (data to STM32)
+  AGPIO(GPIO_STM_RX),                   // TCP to STM32 bootloader bridge (data from STM32)
+  AGPIO(GPIO_STM_BOOT0),                // TCP to STM32 bootloader bridge (STM32 boot mode)
+  AGPIO(GPIO_STM_NRST),                 // TCP to STM32 bootloader bridge (STM32 reset)
 #endif
 
 /*-------------------------------------------------------------------------------------------*\
