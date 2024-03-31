@@ -278,6 +278,11 @@ void CmndSTMStart(void) {
     server_stm_vcp = new WiFiServer(tcp_port + 1);
     server_stm_vcp->begin(); // start TCP server
     server_stm_vcp->setNoDelay(true);
+
+#ifdef USE_DISCOVERY
+    MDNS.addService("stm32", "tcp", tcp_port);
+    MDNS.addService("telnet", "tcp", tcp_port + 1);
+#endif
   }
 
   ResponseCmndDone();
